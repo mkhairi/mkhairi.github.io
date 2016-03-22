@@ -9,6 +9,8 @@ Reset primary key sequence!
 
 # Git
 
+## checkout specific tags
+
 ```$ git clone will give you the whole repository.```
 
 After the clone, you can list the tags with $ git tag -l and then checkout a specific tag:
@@ -18,6 +20,10 @@ After the clone, you can list the tags with $ git tag -l and then checkout a spe
 Even better, checkout and create a branch (other you will be on a branch named after the revision number of tag):
 
 ```$ git checkout tags/<tag_name> -b <tag_name>```
+
+## author
+
+```git commit --author "New Author Name <New Author Email>" -m "commit message "```
 
 Interactive rebase off of a point earlier in the history than the commit you need to modify ```(git rebase -i <earliercommit>)```. In the list of commits being rebased, change the text from pick to edit next to the hash of the one you want to modify. Then when git prompts you to change the commit, use this:
 
