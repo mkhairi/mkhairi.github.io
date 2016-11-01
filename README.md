@@ -39,3 +39,14 @@ It would pause again at D
 Then you would ```git commit --amend --author="Author Name <email@address.com>"``` again
 ```git rebase --continue```
 The rebase would complete.
+
+##reset
+Setting your branch to exactly match the remote branch can be done in two steps:
+
+git fetch origin
+git reset --hard origin/master
+If you want to save your current branch's state before doing this (just in case), you can do:
+
+git commit -a -m "Saving my work, just in case"
+git branch my-saved-work
+
