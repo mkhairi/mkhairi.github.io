@@ -1,0 +1,178 @@
+@use cssnext;
+
+/* fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans: 400, 300);
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+:root {
+  --blue: #05aefc;
+  --green: #09FC83;
+  --red: #FB0044;
+}
+
+html, 
+body {
+  background: var(--blue);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  perspective: 2500px;
+}
+
+.card {
+  background: white;
+  height: 300px;
+  width: 600px;
+  margin: 3em auto;
+  border-radius: .2em;
+  box-shadow: 0 2.5em .9em -2em #555;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: transform .8s cubic-bezier(.63,-0.32,.4,1.39);
+}
+
+.card-flip {
+  transform: rotateY(180deg);
+}
+
+.initials {
+  display: inline-block;
+  font-family: 'Poiret One';
+  font-size: 7em;
+  color: #333;
+  font-weight: 500;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid var(--red);
+  margin-bottom: .5rem;
+}
+
+.initials-back {
+  font-size: 3em;
+  margin: .5em 0;
+  border-bottom: 1px solid var(--red);
+}
+
+.initial-1 {
+  transform: translateX(-80%); 
+}
+
+.initial-2 {
+  color: var(--blue); 
+  transform: translateX(-255%);
+}
+
+.initials-3 {
+  color: var(--green);  
+  transform: translateX(-305%);
+}
+
+.desc {
+  font-weight: 300;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.contact {
+  text-align: center; 
+  font-weight: 300;
+  position: relative; 
+  margin: 2em 0 1em 0;
+}
+
+hr {
+  width: 90%;
+}
+
+.twitter-front {
+  width: 100%;
+  text-align: center;
+  margin-top: 1em;
+}
+
+#twitter-front {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.links {
+  width: 80%;
+  text-align: center;
+  border-top: 1px solid var(--blue);
+  border-bottom: 1px solid var(--green);
+  margin: 0 auto;
+}
+
+.links > a {
+  margin: 0 1em;
+}
+
+#twitter-back {
+  height: 50px;
+  width: 50px;
+}
+
+#github-back {
+  height: 35px;
+  width: 35px;
+  position: relative;
+  top: -.4em;
+}
+
+#linkedin-back {
+  width: 35px;
+  height: 30px;
+  position: relative;
+  top: -.5em;
+}
+
+#email-back {
+  height: 50px;
+  width: 50px;
+}
+
+#codepen-back {
+  height: 38px;
+  width: 38px;
+  position: relative;
+  top: -.3em;
+}
+.outer-ring,
+.inner-box {
+  fill: #333;
+}
+
+#wave {
+  bottom: -1.8em;
+  position: relative;
+}
+
+#click-me {
+  color: #333;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1em;
+  animation: fade 3s infinite ease-in-out;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  
+  50% {
+    opacity: 0;
+  }
+   
+  100% {
+    opacity: 1;
+  }
+}
