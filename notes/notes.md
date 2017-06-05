@@ -50,3 +50,5 @@ If you want to save your current branch's state before doing this (just in case)
 git commit -a -m "Saving my work, just in case"
 git branch my-saved-work
 
+checkout deleted file only
+git ls-files -d | xargs git checkout --
