@@ -450,3 +450,12 @@
         display: none !important;
     }
 }
+
+.btn.btn-icon:not(.btn-footer) i.far, 
+.navbar .navbar-nav>a.btn.btn-icon:not(.btn-footer) i.far {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-12px,-12px);
+    font-size: 1.325rem;
+}

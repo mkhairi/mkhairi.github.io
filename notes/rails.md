@@ -1,3 +1,7 @@
+---
+page: disabled
+---
+
 # Rails
 
 Quick note
