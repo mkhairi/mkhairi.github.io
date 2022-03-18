@@ -11,11 +11,43 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 cd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
 
-asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+echo '. $HOME/.asdf/asdf.sh' >> ~/.bashrc
+echo '. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc
+
+echo '. $HOME/.asdf/asdf.sh' >> ~/.zshrc
+echo '. $HOME/.asdf/completions/asdf.bash' >> ~/.zshrc
+
+exec $SHELL
+
+asdf update
+
+sudo apt install dirmngr gpg gawk unzip locate autoconf bison re2c libxml2 pkg-config libgd-dev libonig-dev libzip-dev
+
+# https://asdf-vm.com/#/plugins-all?id=plugin-list
+
+asdf plugin add ruby
+asdf plugin add nodejs 
+asdf plugin add yarn
+asdf plugin add erlang
+asdf plugin add elixir
+asdf plugin add crystal
+asdf plugin add redis
 
 
-. $HOME/.asdf/asdf.sh
+asdf list-all ruby
+asdf list-all nodejs
 
+asdf install nodejs lts
+asdf install erlang latest
+asdf install elixir latest
+asdf install crystal latest
+
+asdf plugin add php
+asdf install php latest
+```
+
+
+```
 gem install bundler
 git config --global color.ui true
 git config --global user.name "YOUR NAME"
@@ -27,8 +59,9 @@ cat ~/.ssh/id_rsa.pub
 ssh -T git@github.com
 
 gem install rails 
+```
 
-
+```
 # Setting Up A Database
 sudo apt install mysql-client libmysqlclient-dev libpq-dev
 
@@ -41,29 +74,4 @@ sudo -u postgres createuser khairi -s
 # If you would like to set a password for the user, you can do the following
 sudo -u postgres psql
 postgres=# \password khairi
-
-sudo apt install dirmngr gpg gawk unzip locate autoconf bison re2c libxml2 pkg-config libgd-dev libonig-dev libzip-dev
-
-# https://asdf-vm.com/#/plugins-all?id=plugin-list
-
-asdf plugin add ruby
-asdf list-all ruby
-
-asdf plugin add nodejs 
-asdf list-all nodejs
-asdf install nodejs lts
-
-asdf plugin add erlang
-asdf install erlang latest
-
-asdf install elixir
-asdf install elixir latest
-
-asdf plugin add crystal
-asdf install crystal latest
-
-asdf plugin add redis
-
-asdf plugin add php
-asdf install php latest
 ```
